@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "dependencies": {
     "express": "",
-    "wheat": ""
+    "wheat": "",
+    "less-middleware": ""
   },
   "scripts": {}
 }

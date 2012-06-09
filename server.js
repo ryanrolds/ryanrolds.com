@@ -1,16 +1,14 @@
 
 var express = require('express');
+var lessMiddleware = require('less-middleware');
 var wheat = require('wheat');
 
 var app = express.createServer();
-app.use(function(req, res, next) {
-  console.log('asdfasdfffffff');
-  next();
-});
+app.use(lessMiddleware({
+  "force": true,
+  "src": __dirname + '/skin/public',
+  "compress": true
+}));
 app.use(wheat('./'));
-app.use(function(req, res, next) {
-  console.log('asdfasdf');
-  next();
-});
 
 app.listen(1338);
