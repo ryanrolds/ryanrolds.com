@@ -1,18 +1,39 @@
 
 @width: 960px;
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.4em;
+  font-family: 'Lucida Grande', sans-serif;
+  color: #333;
+}
+
 #main {
-  width: @width;
-  margin-left: @width * 0.5 - @width;
-  position: absolute;
-  left: 50%;
+  margin: 10px 5%;
 }
 
 #article {
-  
+  float: left;
+  margin-right: 10px;
+  width: 70%;
+  max-width: @width - 250;
 }
 
 #side {
-  width: 320px;
+  float: left;
+  max-width: 250px;
   padding: 0 10px 0 10px;
+}
+
+#footer {
+    .clear;
 }
