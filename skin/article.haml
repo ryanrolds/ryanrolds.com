@@ -1,13 +1,16 @@
-#article
-  :if article.version
-    %a.sha-version{ href: "/#{article.version}/#{article.name}" } Static Version
-  %h1
-    %a{href: "/" + article.name}&= article.title
-  = markdownEncode(article.markdown)
+#main
+  .article
+    :if article.version
+      %a.sha-version{ href: "/#{article.version}/#{article.name}" } Static Version
+    %h1.title
+      %a{href: "/" + article.name}&= article.title
+    %ul.info
+      %li = article.date
+    = markdownEncode(article.markdown)
 
 #side
   .aside.author
-    %h4 About the Author
+    %h4 About Ryan
     %img.headshot{src: gravitar(author.email) }
     %dl
       %dt Name:
@@ -21,9 +24,9 @@
         %dt BitBucket:
         %dd= bitbucket(author.bitbucket)
     :if author.twitter
-      %dl
-        %dt Twitter:
-        %dd= twitter(author.twitter)
+      %a(href="https://twitter.com/#{author.twitter}" class="twitter-follow-button" data-show-count="false" data-lang="en") Follow @ryanrolds
+      :script
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
     :if author.location
       %dl
         %dt Location:
@@ -33,3 +36,7 @@
         %dt Links:
         %dd
           %a{href: author.homepage} Homepage
+    .clear        
+  .aside.recent
+    %h4 Recent posts
+          

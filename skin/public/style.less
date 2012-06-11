@@ -1,6 +1,4 @@
 
-@width: 960px;
-
 * {
   margin: 0;
   padding: 0;
@@ -17,23 +15,81 @@ body {
   color: #333;
 }
 
-#main {
+#container {
   margin: 10px 5%;
 }
 
-#article {
+#main {
   float: left;
-  margin-right: 10px;
   width: 70%;
-  max-width: @width - 250;
+  max-width: 800px;
 }
 
 #side {
   float: left;
-  max-width: 250px;
-  padding: 0 10px 0 10px;
+  width: 30%;
+  max-width: 430px;
+
+  .aside {
+    margin: 10px 0;
+
+    h4 {
+      border-bottom: 1px solid #000000;
+      margin-bottom: 5px;
+      padding-bottom: 3px;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  
+    dd {
+      margin-bottom: 10px
+    }
+  }
+
+  .author {
+    img.headshot {
+      width: 150px;
+      border: 1px solid #000000;
+      float:right;
+    }
+  }
 }
 
 #footer {
-    .clear;
+  .clear;
+  text-align: center;
+  font-size: 80%;
+}
+
+.article {
+  margin-right: 20px;
+  h1.title {
+    border-bottom: 1px solid #000000;
+    margin: 10px 0 5px 0;
+    padding-bottom: 3px;
+  }
+
+  ul.info {
+    padding: 10px 20px 10px 0;
+    list-style: none;
+    float: left;
+    
+    li {
+      line-height: 2.8em;
+    }
+  }
+  
+  .date {
+    margin-bottom: 15px;
+  }
+
+  p {
+    margin: 10px 0 10px 0;
+  }
+}
+
+a {
+  text-decoration: none;
 }
